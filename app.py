@@ -1,3 +1,4 @@
+from psycopg2.extras import RealDictCursor
 from flask import Flask, render_template, request, redirect, url_for, session, flash, send_file
 from database import get_db_connection
 from functools import wraps
@@ -91,7 +92,7 @@ def student_login():
         password = request.form["password"]
 
         connection = get_db_connection()
-        cursor = connection.cursor(dictionary=True)
+        cursor = connection.cursor(cursor_factory=RealDictCursor)
 
         query = """
         SELECT *
@@ -156,7 +157,7 @@ def student_timetable():
     try:
 
         connection = get_db_connection()
-        cursor = connection.cursor(dictionary=True)
+        cursor = connection.cursor(cursor_factory=RealDictCursor)
 
         department = session["student_department"]
         semester = session["student_semester"]
@@ -244,7 +245,7 @@ def faculty_login():
         password = request.form["password"]
 
         connection = get_db_connection()
-        cursor = connection.cursor(dictionary=True)
+        cursor = connection.cursor(cursor_factory=RealDictCursor)
 
         query = """
         SELECT *
@@ -301,7 +302,7 @@ def add_timetable():
         return redirect(url_for("faculty_login"))
 
     connection = get_db_connection()
-    cursor = connection.cursor(dictionary=True)
+    cursor = connection.cursor(cursor_factory=RealDictCursor)
 
     # Get subjects
     cursor.execute("SELECT * FROM subjects")
@@ -509,7 +510,7 @@ def view_timetable():
     semester = request.args.get("semester", "")
 
     connection = get_db_connection()
-    cursor = connection.cursor(dictionary=True)
+    cursor = connection.cursor(cursor_factory=RealDictCursor)
 
     query = """
     SELECT
@@ -597,7 +598,7 @@ def faculty_timetable():
     try:
 
         connection = get_db_connection()
-        cursor = connection.cursor(dictionary=True)
+        cursor = connection.cursor(cursor_factory=RealDictCursor)
 
         cursor.execute("""
             SELECT
@@ -671,7 +672,7 @@ def notifications():
 
         cleanup_cursor.execute("""
             DELETE FROM notifications
-            WHERE created_at < (NOW() - INTERVAL 24 HOUR)
+            WHERE created_at < NOW() - INTERVAL '24 hours'
         """)
 
         cleanup_connection.commit()
@@ -680,7 +681,7 @@ def notifications():
 
         # Now connect for loading notifications
         connection = get_db_connection()
-        cursor = connection.cursor(dictionary=True)
+        cursor = connection.cursor(cursor_factory=RealDictCursor)
 
         # STUDENT: show only their department + semester notifications
         if "student_id" in session:
@@ -746,7 +747,7 @@ def delete_timetable(timetable_id):
 
     try:
         connection = get_db_connection()
-        cursor = connection.cursor(dictionary=True)
+        cursor = connection.cursor(cursor_factory=RealDictCursor)
 
         # Get the timetable AND check which faculty owns it
         cursor.execute("""
@@ -859,7 +860,7 @@ def student_download_pdf():
         semester = session["student_semester"]
 
         connection = get_db_connection()
-        cursor = connection.cursor(dictionary=True)
+        cursor = connection.cursor(cursor_factory=RealDictCursor)
 
         # Get only this student's timetable
         query = """
@@ -1072,7 +1073,7 @@ def faculty_download_pdf():
         faculty_id = session["faculty_id"]
 
         connection = get_db_connection()
-        cursor = connection.cursor(dictionary=True)
+        cursor = connection.cursor(cursor_factory=RealDictCursor)
 
         # Get ONLY the logged-in faculty's timetable
         cursor.execute("""
@@ -1367,7 +1368,7 @@ def faculty_all_timetables():
     try:
 
         connection = get_db_connection()
-        cursor = connection.cursor(dictionary=True)
+        cursor = connection.cursor(cursor_factory=RealDictCursor)
 
         cursor.execute("""
             SELECT
@@ -1445,7 +1446,7 @@ def faculty_download_all_pdf():
     try:
 
         connection = get_db_connection()
-        cursor = connection.cursor(dictionary=True)
+        cursor = connection.cursor(cursor_factory=RealDictCursor)
 
         cursor.execute("""
             SELECT
