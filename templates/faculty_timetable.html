@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Faculty Timetable</title>
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <style>
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(
+                135deg,
+                #eef2ff,
+                #f8f9ff
+            );
+        }
+
+        .page-container {
+            padding: 50px 20px;
+        }
+
+        .header-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        .header-card h1 {
+            font-weight: 700;
+            color: #172033;
+            margin-bottom: 8px;
+        }
+
+        .header-card p {
+            color: #6b7280;
+            margin: 0;
+        }
+
+        .table-card {
+            background: white;
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        .table {
+            margin-bottom: 0;
+            vertical-align: middle;
+        }
+
+        .table thead th {
+            background: #4f46e5;
+            color: white;
+            border: none;
+            padding: 15px;
+            white-space: nowrap;
+        }
+
+        .table tbody td {
+            padding: 15px;
+        }
+
+        .table tbody tr:hover {
+            background: #f5f7ff;
+        }
+
+        .room-badge {
+            background: #6b7280;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+
+        .delete-btn {
+            border-radius: 8px;
+        }
+
+        .no-access {
+            color: #9ca3af;
+            font-size: 14px;
+        }
+
+        .action-buttons {
+            margin-top: 25px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .download-btn {
+            background: #198754;
+            color: white;
+            border: none;
+        }
+
+        .download-btn:hover {
+            background: #157347;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+
+            .page-container {
+                padding: 25px 10px;
+            }
+
+            .header-card {
+                padding: 20px;
+            }
+
+            .table-card {
+                padding: 15px;
+            }
+
+            .header-card h1 {
+                font-size: 28px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+<div class="container-fluid page-container">
+
+    <!-- HEADER -->
+
+    <div class="container">
+
+        <div class="header-card">
+
+            <div class="d-flex
+                        justify-content-between
+                        align-items-center
+                        flex-wrap
+                        gap-3">
+
+                <div>
+
+                    <h1>
+                        👨‍🏫 My Teaching Schedule
+                    </h1>
+
+                    <p>
+                        View and manage your assigned timetable
+                    </p>
+
+                </div>
+
+                <div>
+
+                    <a
+                        href="{{ url_for('faculty_dashboard') }}"
+                        class="btn btn-outline-primary">
+
+                        ← Dashboard
+
+                    </a>
+
+                    <a
+                        href="{{ url_for('faculty_download_pdf') }}"
+                        class="btn download-btn">
+
+                        📄 Download PDF
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- TABLE -->
+
+        <div class="table-card">
+
+            <div class="table-responsive">
+
+                <table class="table table-bordered table-hover">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Subject</th>
+
+                            <th>Faculty</th>
+
+                            <th>Department</th>
+
+                            <th>Semester</th>
+
+                            <th>Day</th>
+
+                            <th>Time</th>
+
+                            <th>Room</th>
+
+                            <th>Action</th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+                        {% for timetable in timetables %}
+
+                        <tr>
+
+                            <td>
+                                <strong>
+                                    {{ timetable.subject_name }}
+                                </strong>
+                            </td>
+
+
+                            <td>
+                                {{ timetable.faculty_name }}
+                            </td>
+
+
+                            <td>
+                                {{ timetable.department }}
+                            </td>
+
+
+                            <td>
+                                {{ timetable.semester }}
+                            </td>
+
+
+                            <td>
+                                <strong>
+                                    {{ timetable.day_name }}
+                                </strong>
+                            </td>
+
+
+                            <td>
+                                {{ timetable.time_slot }}
+                            </td>
+
+
+                            <td>
+
+                                <span class="room-badge">
+                                    {{ timetable.room_no }}
+                                </span>
+
+                            </td>
+
+
+                            <td>
+
+                                {% if timetable.faculty_id == session["faculty_id"] %}
+
+                                <a
+                                    href="{{ url_for(
+                                        'delete_timetable',
+                                        timetable_id=timetable.timetable_id
+                                    ) }}"
+                                    class="btn btn-danger btn-sm delete-btn"
+                                    onclick="return confirm(
+                                        'Are you sure you want to delete this schedule?'
+                                    );">
+
+                                    🗑️ Delete
+
+                                </a>
+
+                                {% else %}
+
+                                <span class="no-access">
+                                    No access
+                                </span>
+
+                                {% endif %}
+
+                            </td>
+
+                        </tr>
+
+
+                        {% else %}
+
+                        <tr>
+
+                            <td
+                                colspan="8"
+                                class="text-center py-5">
+
+                                <h5>
+                                    📅 No Timetable Available
+                                </h5>
+
+                                <p class="text-muted mb-0">
+                                    You don't have any timetable entries yet.
+                                </p>
+
+                            </td>
+
+                        </tr>
+
+                        {% endfor %}
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+
+            <!-- BOTTOM BUTTONS -->
+
+            <div class="action-buttons">
+
+                <a
+                    href="{{ url_for('faculty_dashboard') }}"
+                    class="btn btn-secondary">
+
+                    ← Back to Dashboard
+
+                </a>
+
+
+                <a
+                    href="{{ url_for('faculty_download_pdf') }}"
+                    class="btn download-btn">
+
+                    📄 Download My Timetable PDF
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+</body>
+
+</html>

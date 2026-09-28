@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Online Smart Schedule</title>
+
+    <!-- Bootstrap -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <!-- Main CSS -->
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+
+<body class="home-page">
+
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<nav class="home-navbar">
+
+    <div class="home-nav-container">
+
+        <a href="{{ url_for('home') }}" class="home-logo">
+
+            <span class="logo-icon">📅</span>
+
+            <span>Online Smart Schedule</span>
+
+        </a>
+
+
+        <div class="home-nav-links">
+
+            <a href="#login">
+                Login
+            </a>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+
+<!-- =====================================================
+     HERO SECTION
+===================================================== -->
+
+<section class="home-hero">
+
+    <div class="hero-background-circle circle-one"></div>
+
+    <div class="hero-background-circle circle-two"></div>
+
+
+    <div class="container">
+
+        <div class="row align-items-center">
+
+
+            <!-- LEFT SIDE -->
+
+            <div class="col-lg-7">
+
+                <div class="hero-badge">
+                    ✨ Smart • Simple • Organized
+                </div>
+
+
+                <h1 class="hero-title">
+
+                    Your College
+
+                    <span>Schedule,</span>
+
+                    Simplified.
+
+                </h1>
+
+
+                <p class="hero-description">
+
+                    Manage, view and organize college timetables
+                    with ease. Stay updated with lectures,
+                    classrooms and schedule changes — all in one place.
+
+                </p>
+
+
+                <!-- ONLY GET STARTED BUTTON -->
+
+                <div class="hero-buttons">
+
+                    <a
+                        href="#login"
+                        class="hero-primary-btn">
+
+                        Get Started
+
+                        <span>→</span>
+
+                    </a>
+
+                </div>
+
+
+                <!-- TRUST ITEMS -->
+
+                <div class="hero-trust">
+
+                    <div class="trust-item">
+
+                        <strong>📅</strong>
+
+                        <span>
+                            Smart Timetable
+                        </span>
+
+                    </div>
+
+
+                    <div class="trust-item">
+
+                        <strong>🔔</strong>
+
+                        <span>
+                            Instant Updates
+                        </span>
+
+                    </div>
+
+
+                    <div class="trust-item">
+
+                        <strong>✓</strong>
+
+                        <span>
+                            Clash Prevention
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- RIGHT SIDE -->
+
+            <div class="col-lg-5">
+
+                <div class="hero-smart-card">
+
+                    <div class="smart-card-icon">
+                        📅
+                    </div>
+
+
+                    <h2>
+                        Smart Scheduling
+                    </h2>
+
+
+                    <p>
+
+                        One simple platform for students
+                        and faculty to manage college
+                        schedules efficiently.
+
+                    </p>
+
+
+                    <div class="smart-card-items">
+
+
+                        <!-- ITEM 1 -->
+
+                        <div class="smart-item">
+
+                            <span class="smart-item-icon">
+                                ✓
+                            </span>
+
+                            <div>
+
+                                <strong>
+                                    Easy Management
+                                </strong>
+
+                                <small>
+                                    Organize schedules effortlessly
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- ITEM 2 -->
+
+                        <div class="smart-item">
+
+                            <span class="smart-item-icon">
+                                🔔
+                            </span>
+
+                            <div>
+
+                                <strong>
+                                    Instant Notifications
+                                </strong>
+
+                                <small>
+                                    Stay updated with changes
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- ITEM 3 -->
+
+                        <div class="smart-item">
+
+                            <span class="smart-item-icon">
+                                🛡️
+                            </span>
+
+                            <div>
+
+                                <strong>
+                                    Clash Prevention
+                                </strong>
+
+                                <small>
+                                    Avoid scheduling conflicts
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <!-- NO FEATURES BUTTON -->
+
+                    <div class="smart-card-status">
+
+                        <span>
+                            ✓
+                        </span>
+
+                        Smart and organized scheduling
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FEATURES INFORMATION
+===================================================== -->
+
+<section class="home-features">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span>
+                POWERFUL FEATURES
+            </span>
+
+            <h2>
+                Everything you need for smarter scheduling.
+            </h2>
+
+            <p>
+                A simple and organized platform designed
+                for students and faculty.
+            </p>
+
+        </div>
+
+
+        <div class="row g-4">
+
+
+            <!-- FEATURE 1 -->
+
+            <div class="col-md-4">
+
+                <div class="feature-card">
+
+                    <div class="feature-icon blue-icon">
+                        📅
+                    </div>
+
+                    <h4>
+                        Smart Timetable
+                    </h4>
+
+                    <p>
+                        View organized college schedules
+                        and quickly find classes, rooms
+                        and subjects.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- FEATURE 2 -->
+
+            <div class="col-md-4">
+
+                <div class="feature-card">
+
+                    <div class="feature-icon purple-icon">
+                        🔔
+                    </div>
+
+                    <h4>
+                        Instant Notifications
+                    </h4>
+
+                    <p>
+                        Get updates when schedules are
+                        changed or cancelled.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- FEATURE 3 -->
+
+            <div class="col-md-4">
+
+                <div class="feature-card">
+
+                    <div class="feature-icon green-icon">
+                        🛡️
+                    </div>
+
+                    <h4>
+                        Clash Prevention
+                    </h4>
+
+                    <p>
+                        Prevent conflicts between faculty,
+                        classrooms and schedules.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     ABOUT SECTION
+===================================================== -->
+
+
+
+            
+
+
+
+
+<!-- =====================================================
+     LOGIN SECTION
+===================================================== -->
+
+<section id="login" class="login-section">
+
+    <div class="container">
+
+        <div class="section-heading light-heading">
+
+            <span>GET STARTED</span>
+
+            <h2>
+                Choose your portal
+            </h2>
+
+            <p>
+                Login to access your personalized
+                Online Smart Schedule dashboard.
+            </p>
+
+        </div>
+
+
+        <div class="row justify-content-center g-4">
+
+            <!-- STUDENT -->
+
+            <div class="col-md-5">
+
+                <div class="portal-card">
+
+                    <div class="portal-icon">
+                        🎓
+                    </div>
+
+                    <h3>
+                        Student Portal
+                    </h3>
+
+                    <p>
+                        View your semester timetable,
+                        classrooms, subjects and
+                        important notifications.
+                    </p>
+
+                    <a
+                        href="{{ url_for('student_login') }}"
+                        class="portal-btn student-btn">
+
+                        Student Login
+
+                        <span>→</span>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- FACULTY -->
+
+            <div class="col-md-5">
+
+                <div class="portal-card">
+
+                    <div class="portal-icon">
+                        👨‍🏫
+                    </div>
+
+                    <h3>
+                        Faculty Portal
+                    </h3>
+
+                    <p>
+                        View your assigned lectures
+                        and manage your own timetable
+                        schedules.
+                    </p>
+
+                    <a
+                        href="{{ url_for('faculty_login') }}"
+                        class="portal-btn faculty-btn">
+
+                        Faculty Login
+
+                        <span>→</span>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="home-footer">
+
+    <div class="container">
+
+        <div class="footer-content">
+
+            <div>
+
+                <h5>
+                    📅 Online Smart Schedule
+                </h5>
+
+                <p>
+                    Smart college timetable management.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <p>
+                    © 2026 Online Smart Schedule
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+</body>
+
+</html>

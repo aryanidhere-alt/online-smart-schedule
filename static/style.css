@@ -1,0 +1,1997 @@
+/* =========================================================
+   ONLINE SMART SCHEDULE
+   MAIN STYLE SHEET
+   Homepage + Responsive Design
+   ========================================================= */
+
+
+/* =========================================================
+   GLOBAL
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: #111827;
+    background: #f8fafc;
+}
+
+a {
+    transition: all 0.25s ease;
+}
+
+img {
+    max-width: 100%;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+/* =========================================================
+   HOME PAGE
+   ========================================================= */
+
+.home-page {
+    background: #f8fafc;
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   NAVBAR
+   ========================================================= */
+
+.home-navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    padding: 22px 0;
+}
+
+.home-nav-container {
+    width: min(1200px, calc(100% - 40px));
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.home-logo {
+    color: #ffffff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.home-logo:hover {
+    color: #ffffff;
+    transform: translateY(-1px);
+}
+
+.logo-icon {
+    width: 43px;
+    height: 43px;
+    border-radius: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 23px;
+    background: rgba(255, 255, 255, 0.14);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(10px);
+}
+
+.home-nav-links {
+    display: flex;
+    align-items: center;
+    gap: 34px;
+}
+
+.home-nav-links a {
+    color: rgba(255, 255, 255, 0.86);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.home-nav-links a:hover {
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.home-hero {
+    min-height: 760px;
+    position: relative;
+    overflow: hidden;
+    padding: 150px 0 100px;
+    display: flex;
+    align-items: center;
+
+    background:
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(96, 165, 250, 0.25),
+            transparent 28%
+        ),
+        linear-gradient(
+            135deg,
+            #0f172a 0%,
+            #1e3a8a 55%,
+            #2563eb 100%
+        );
+
+    color: #ffffff;
+}
+
+.hero-background-circle {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    pointer-events: none;
+}
+
+.circle-one {
+    width: 550px;
+    height: 550px;
+    right: -220px;
+    top: -170px;
+}
+
+.circle-two {
+    width: 400px;
+    height: 400px;
+    left: -200px;
+    bottom: -210px;
+}
+
+
+/* =========================================================
+   HERO TEXT
+   ========================================================= */
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.11);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 9px 16px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 24px;
+    backdrop-filter: blur(10px);
+}
+
+.hero-title {
+    font-size: clamp(45px, 5vw, 64px);
+    line-height: 1.06;
+    font-weight: 850;
+    letter-spacing: -2.5px;
+    max-width: 650px;
+    margin: 0;
+}
+
+.hero-title span {
+    display: block;
+    color: #93c5fd;
+}
+
+.hero-description {
+    max-width: 600px;
+    font-size: 17px;
+    line-height: 1.8;
+    color: #dbeafe;
+    margin: 25px 0 0;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 35px;
+}
+
+.hero-primary-btn,
+.hero-secondary-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px 23px;
+    border-radius: 11px;
+    text-decoration: none;
+    font-weight: 750;
+    transition: all 0.25s ease;
+}
+
+.hero-primary-btn {
+    background: #ffffff;
+    color: #1d4ed8;
+}
+
+.hero-primary-btn:hover {
+    color: #1d4ed8;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.22);
+}
+
+.hero-secondary-btn {
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.hero-secondary-btn:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.13);
+    transform: translateY(-3px);
+}
+
+.hero-trust {
+    display: flex;
+    gap: 24px;
+    margin-top: 42px;
+    flex-wrap: wrap;
+}
+
+.trust-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: #dbeafe;
+}
+
+.trust-item strong {
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   SCHEDULE PREVIEW
+   ========================================================= */
+
+.schedule-preview {
+    background: rgba(255, 255, 255, 0.98);
+    color: #111827;
+    border-radius: 24px;
+    padding: 28px;
+    max-width: 475px;
+    margin-left: auto;
+
+    box-shadow:
+        0 30px 75px rgba(0, 0, 0, 0.28);
+
+    transform: rotate(1deg);
+    transition: all 0.4s ease;
+}
+
+.schedule-preview:hover {
+    transform: rotate(0deg) translateY(-8px);
+}
+
+.preview-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.preview-top small {
+    color: #6b7280;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+}
+
+.preview-top h4 {
+    margin: 5px 0 0;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.preview-calendar {
+    width: 46px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #eff6ff;
+    border-radius: 13px;
+    font-size: 22px;
+}
+
+.preview-line {
+    height: 1px;
+    background: #e5e7eb;
+    margin: 20px 0;
+}
+
+.schedule-item {
+    display: grid;
+    grid-template-columns: 55px 11px 1fr;
+    align-items: start;
+    gap: 13px;
+    padding: 17px 0;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.schedule-time {
+    width: 55px;
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.schedule-time small {
+    display: block;
+    color: #9ca3af;
+    font-size: 10px;
+    margin-top: 2px;
+}
+
+.schedule-dot {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    margin-top: 5px;
+}
+
+.schedule-dot.blue {
+    background: #2563eb;
+}
+
+.schedule-dot.purple {
+    background: #7c3aed;
+}
+
+.schedule-dot.green {
+    background: #16a34a;
+}
+
+.schedule-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.schedule-info strong {
+    font-size: 14px;
+    color: #111827;
+}
+
+.schedule-info span {
+    font-size: 12px;
+    color: #6b7280;
+}
+
+.preview-footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    padding-top: 20px;
+    font-size: 12px;
+    color: #6b7280;
+}
+
+.preview-footer span:first-child {
+    color: #16a34a;
+    font-weight: 700;
+}
+
+.preview-footer a {
+    color: #2563eb;
+    font-weight: 700;
+}
+
+.preview-footer a:hover {
+    color: #1d4ed8 !important;
+}
+
+
+/* =========================================================
+   FEATURES
+   ========================================================= */
+
+.home-features {
+    padding: 100px 0;
+    background: #ffffff;
+}
+
+.section-heading {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 55px;
+}
+
+.section-heading > span {
+    color: #2563eb;
+    font-size: 12px;
+    font-weight: 850;
+    letter-spacing: 2px;
+}
+
+.section-heading h2 {
+    font-size: 40px;
+    line-height: 1.2;
+    font-weight: 850;
+    margin: 12px 0 0;
+    color: #111827;
+}
+
+.section-heading p {
+    color: #6b7280;
+    margin: 15px 0 0;
+    line-height: 1.7;
+}
+
+.feature-card {
+    background: #f8fafc;
+    border: 1px solid #e5e7eb;
+    border-radius: 20px;
+    padding: 32px;
+    height: 100%;
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-8px);
+    border-color: #bfdbfe;
+    background: #ffffff;
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+}
+
+.feature-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 27px;
+    margin-bottom: 22px;
+}
+
+.blue-icon {
+    background: #dbeafe;
+}
+
+.purple-icon {
+    background: #ede9fe;
+}
+
+.green-icon {
+    background: #dcfce7;
+}
+
+.feature-card h4 {
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+.feature-card p {
+    color: #6b7280;
+    line-height: 1.7;
+    margin: 0;
+}
+
+
+/* =========================================================
+   ABOUT
+   ========================================================= */
+
+.about-section {
+    padding: 110px 0;
+    background: #f8fafc;
+}
+
+.about-visual {
+    min-height: 400px;
+    background: linear-gradient(
+        135deg,
+        #dbeafe,
+        #eff6ff
+    );
+    border-radius: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-right: 40px;
+    overflow: hidden;
+}
+
+.about-visual::before {
+    content: "";
+    position: absolute;
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    border: 1px solid rgba(37, 99, 235, 0.12);
+}
+
+.about-big-icon {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 80px;
+    box-shadow: 0 20px 50px rgba(37, 99, 235, 0.15);
+    position: relative;
+    z-index: 2;
+}
+
+.floating-card {
+    position: absolute;
+    background: #ffffff;
+    padding: 13px 18px;
+    border-radius: 13px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+    font-weight: 700;
+    font-size: 13px;
+    z-index: 3;
+}
+
+.floating-one {
+    top: 70px;
+    left: 25px;
+    color: #16a34a;
+}
+
+.floating-two {
+    bottom: 65px;
+    right: 25px;
+    color: #2563eb;
+}
+
+.section-label {
+    color: #2563eb;
+    font-size: 12px;
+    font-weight: 850;
+    letter-spacing: 2px;
+}
+
+.about-section h2 {
+    font-size: 42px;
+    line-height: 1.15;
+    font-weight: 850;
+    margin: 15px 0 20px;
+}
+
+.about-section p {
+    color: #6b7280;
+    line-height: 1.8;
+}
+
+.about-points {
+    margin-top: 25px;
+    display: grid;
+    gap: 12px;
+    font-weight: 650;
+    color: #334155;
+}
+
+
+/* =========================================================
+   LOGIN SECTION
+   ========================================================= */
+
+.login-section {
+    padding: 110px 0;
+    background: linear-gradient(
+        135deg,
+        #111827,
+        #1e3a8a
+    );
+}
+
+.light-heading > span {
+    color: #93c5fd;
+}
+
+.light-heading h2 {
+    color: #ffffff;
+}
+
+.light-heading p {
+    color: #cbd5e1;
+}
+
+.portal-card {
+    background: rgba(255, 255, 255, 0.98);
+    border-radius: 22px;
+    padding: 38px;
+    text-align: center;
+    height: 100%;
+    transition: all 0.3s ease;
+}
+
+.portal-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 22px 55px rgba(0, 0, 0, 0.25);
+}
+
+.portal-icon {
+    width: 75px;
+    height: 75px;
+    margin: 0 auto 18px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #eff6ff;
+    font-size: 40px;
+}
+
+.portal-card h3 {
+    font-weight: 850;
+    margin-bottom: 12px;
+}
+
+.portal-card p {
+    color: #6b7280;
+    line-height: 1.7;
+    min-height: 75px;
+}
+
+.portal-btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    padding: 14px;
+    border-radius: 11px;
+    text-decoration: none;
+    font-weight: 750;
+    transition: all 0.25s ease;
+}
+
+.student-btn {
+    background: #2563eb;
+    color: #ffffff;
+}
+
+.student-btn:hover {
+    background: #1d4ed8;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+.faculty-btn {
+    background: #f59e0b;
+    color: #111827;
+}
+
+.faculty-btn:hover {
+    background: #d97706;
+    color: #111827;
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.home-footer {
+    background: #0f172a;
+    color: #ffffff;
+    padding: 30px 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-content h5 {
+    margin: 0;
+    font-weight: 750;
+}
+
+.footer-content p {
+    margin: 5px 0 0;
+    color: #94a3b8;
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   GENERAL BUTTON EFFECTS
+   ========================================================= */
+
+.home-page a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+.home-page a:focus-visible {
+    outline: 3px solid rgba(147, 197, 253, 0.7);
+    outline-offset: 3px;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 991px) {
+
+    .home-hero {
+        padding-top: 130px;
+        padding-bottom: 80px;
+    }
+
+    .hero-title {
+        font-size: 50px;
+    }
+
+    .schedule-preview {
+        margin: 60px auto 0;
+        transform: none;
+    }
+
+    .schedule-preview:hover {
+        transform: translateY(-5px);
+    }
+
+    .about-visual {
+        margin-right: 0;
+        margin-bottom: 50px;
+    }
+
+    .about-section h2 {
+        font-size: 38px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .home-nav-container {
+        width: calc(100% - 30px);
+        padding: 0;
+    }
+
+    .home-nav-links {
+        display: none;
+    }
+
+    .home-logo {
+        font-size: 17px;
+    }
+
+    .logo-icon {
+        width: 38px;
+        height: 38px;
+        font-size: 20px;
+    }
+
+    .home-hero {
+        min-height: auto;
+        padding-top: 120px;
+        padding-bottom: 70px;
+    }
+
+    .hero-title {
+        font-size: 40px;
+        letter-spacing: -1px;
+    }
+
+    .hero-description {
+        font-size: 16px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .hero-primary-btn,
+    .hero-secondary-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .hero-trust {
+        gap: 12px;
+        flex-direction: column;
+        margin-top: 30px;
+    }
+
+    .schedule-preview {
+        padding: 20px;
+        max-width: 100%;
+    }
+
+    .schedule-item {
+        grid-template-columns: 48px 10px 1fr;
+        gap: 10px;
+    }
+
+    .preview-footer {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .home-features,
+    .about-section,
+    .login-section {
+        padding: 75px 0;
+    }
+
+    .section-heading {
+        margin-bottom: 40px;
+    }
+
+    .section-heading h2 {
+        font-size: 32px;
+    }
+
+    .about-section h2 {
+        font-size: 34px;
+    }
+
+    .about-visual {
+        min-height: 320px;
+    }
+
+    .about-big-icon {
+        width: 145px;
+        height: 145px;
+        font-size: 65px;
+    }
+
+    .floating-one {
+        left: 15px;
+        top: 45px;
+    }
+
+    .floating-two {
+        right: 15px;
+        bottom: 45px;
+    }
+
+    .portal-card {
+        padding: 30px 24px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+}
+
+/* =========================================
+   DASHBOARD UI
+========================================= */
+
+.dashboard-body {
+    background: #f5f7ff;
+    min-height: 100vh;
+}
+
+.dashboard-section {
+    min-height: calc(100vh - 150px);
+    padding: 70px 0;
+    background:
+        radial-gradient(
+            circle at 10% 10%,
+            rgba(99, 102, 241, 0.10),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 90% 90%,
+            rgba(139, 92, 246, 0.10),
+            transparent 30%
+        ),
+        #f5f7ff;
+}
+
+
+/* Header */
+
+.dashboard-header {
+    margin-bottom: 35px;
+}
+
+.dashboard-badge {
+    display: inline-block;
+    background: #e0e7ff;
+    color: #4338ca;
+    padding: 8px 16px;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.faculty-badge {
+    background: #fff7ed;
+    color: #c2410c;
+}
+
+.dashboard-header h1 {
+    font-size: 40px;
+    font-weight: 800;
+    color: #111827;
+    margin-bottom: 10px;
+}
+
+.dashboard-header p {
+    color: #6b7280;
+    font-size: 16px;
+}
+
+
+/* Logout */
+
+.logout-btn {
+    background: #111827;
+    color: white;
+    border-radius: 10px;
+    padding: 9px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.logout-btn:hover {
+    background: #374151;
+    color: white;
+    transform: translateY(-2px);
+}
+
+
+/* Dashboard Cards */
+
+.dashboard-card {
+    background: white;
+    border: 1px solid #eef0f7;
+    border-radius: 22px;
+    padding: 32px;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    gap: 22px;
+    box-shadow: 0 10px 35px rgba(31, 41, 55, 0.06);
+    transition: all 0.3s ease;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 20px 45px rgba(31, 41, 55, 0.12);
+}
+
+
+/* Card Icons */
+
+.dashboard-card-icon {
+    min-width: 65px;
+    height: 65px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 18px;
+
+    background: #eef2ff;
+    font-size: 30px;
+}
+
+.notification-card .dashboard-card-icon {
+    background: #fff7ed;
+}
+
+.faculty-icon {
+    background: #eef2ff;
+}
+
+.add-icon {
+    background: #ecfdf5;
+}
+
+
+/* Card Content */
+
+.dashboard-card-content {
+    flex: 1;
+}
+
+.dashboard-card-content h3 {
+    font-size: 21px;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 10px;
+}
+
+.dashboard-card-content p {
+    color: #6b7280;
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+
+/* Buttons */
+
+.dashboard-btn {
+    display: inline-block;
+    text-decoration: none;
+
+    background: #4f46e5;
+    color: white;
+
+    padding: 10px 18px;
+
+    border-radius: 10px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    transition: all 0.3s ease;
+}
+
+.dashboard-btn:hover {
+    background: #4338ca;
+    color: white;
+    transform: translateX(3px);
+}
+
+.notification-btn {
+    background: #ea580c;
+}
+
+.notification-btn:hover {
+    background: #c2410c;
+}
+
+.faculty-btn {
+    background: #4f46e5;
+}
+
+.add-btn {
+    background: #059669;
+}
+
+.add-btn:hover {
+    background: #047857;
+}
+
+
+/* Information Box */
+
+.dashboard-info {
+    margin-top: 35px;
+
+    background: white;
+
+    border: 1px solid #eef0f7;
+
+    border-radius: 18px;
+
+    padding: 22px 25px;
+
+    display: flex;
+    align-items: center;
+    gap: 18px;
+
+    box-shadow: 0 8px 25px rgba(31, 41, 55, 0.05);
+}
+
+.info-icon {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #eef2ff;
+
+    border-radius: 14px;
+
+    font-size: 23px;
+}
+
+.dashboard-info h5 {
+    margin: 0 0 5px;
+    font-weight: 600;
+}
+
+.dashboard-info p {
+    margin: 0;
+    color: #6b7280;
+    font-size: 13px;
+}
+
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+    .dashboard-section {
+        padding: 45px 0;
+    }
+
+    .dashboard-header h1 {
+        font-size: 32px;
+    }
+
+    .dashboard-card {
+        padding: 25px;
+    }
+
+    .custom-navbar .container {
+        gap: 15px;
+    }
+
+    .logo {
+        font-size: 17px;
+    }
+
+    .logout-btn {
+        padding: 7px 14px;
+        font-size: 12px;
+    }
+
+}
+
+@media (max-width: 500px) {
+
+    .dashboard-card {
+        flex-direction: column;
+    }
+
+    .dashboard-card-icon {
+        min-width: 60px;
+        width: 60px;
+        height: 60px;
+    }
+
+    .dashboard-header h1 {
+        font-size: 28px;
+    }
+
+    .dashboard-info {
+        align-items: flex-start;
+    }
+
+}
+
+/* Student Details */
+
+.student-details {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.student-details > div {
+    background: white;
+    border: 1px solid #eef0f7;
+    border-radius: 15px;
+    padding: 15px 22px;
+    min-width: 180px;
+    box-shadow: 0 5px 20px rgba(31, 41, 55, 0.05);
+}
+
+.student-details strong {
+    display: block;
+    font-size: 12px;
+    color: #9ca3af;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+}
+
+.student-details span {
+    font-size: 16px;
+    font-weight: 600;
+    color: #111827;
+}
+
+
+/* Timetable */
+
+.timetable-container {
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.timetable-container table {
+    margin-bottom: 0;
+}
+
+.timetable-container th {
+    font-weight: 600;
+}
+
+.timetable-container td {
+    padding: 15px 12px;
+}
+/* ==========================================================
+   FACULTY DASHBOARD
+========================================================== */
+
+.faculty-dashboard-body {
+    font-family: "Poppins", sans-serif;
+    background:
+        radial-gradient(
+            circle at 10% 10%,
+            rgba(99, 102, 241, 0.12),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 90% 90%,
+            rgba(124, 58, 237, 0.10),
+            transparent 30%
+        ),
+        #f5f7ff;
+
+    color: #111827;
+    min-height: 100vh;
+}
+
+
+/* ==========================================================
+   NAVBAR
+========================================================== */
+
+.faculty-navbar {
+    background: rgba(255, 255, 255, 0.96);
+    padding: 18px 0;
+
+    box-shadow:
+        0 5px 25px rgba(31, 41, 55, 0.07);
+
+    border-bottom: 1px solid #eef0f7;
+}
+
+
+.faculty-logo {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    text-decoration: none;
+
+    color: #312e81;
+
+    font-size: 20px;
+    font-weight: 700;
+}
+
+
+.faculty-logo:hover {
+    color: #312e81;
+}
+
+
+.faculty-logo-icon {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #4f46e5,
+            #7c3aed
+        );
+
+    font-size: 21px;
+}
+
+
+.faculty-logout {
+    text-decoration: none;
+
+    padding: 9px 20px;
+
+    border-radius: 10px;
+
+    border: 1px solid #e5e7eb;
+
+    color: #374151;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: all 0.3s ease;
+}
+
+
+.faculty-logout:hover {
+    background: #111827;
+    color: white;
+
+    transform: translateY(-2px);
+}
+
+
+/* ==========================================================
+   MAIN DASHBOARD
+========================================================== */
+
+.faculty-dashboard {
+    padding: 65px 0 90px;
+
+    min-height: calc(100vh - 100px);
+}
+
+
+/* ==========================================================
+   WELCOME HEADER
+========================================================== */
+
+.faculty-welcome {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 40px;
+}
+
+
+.faculty-badge {
+    display: inline-block;
+
+    padding: 9px 18px;
+
+    border-radius: 30px;
+
+    background: #e0e7ff;
+
+    color: #4338ca;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 18px;
+}
+
+
+.faculty-welcome h1 {
+    font-size: 42px;
+
+    font-weight: 800;
+
+    margin-bottom: 10px;
+
+    color: #111827;
+}
+
+
+.faculty-welcome p {
+    color: #6b7280;
+
+    font-size: 16px;
+
+    max-width: 650px;
+
+    margin-bottom: 0;
+}
+
+
+.faculty-profile-icon {
+    width: 105px;
+    height: 105px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eef2ff,
+            #ede9fe
+        );
+
+    border: 1px solid #ddd6fe;
+
+    font-size: 48px;
+
+    box-shadow:
+        0 15px 35px rgba(79, 70, 229, 0.12);
+}
+
+
+/* ==========================================================
+   STAT CARDS
+========================================================== */
+
+.faculty-stats {
+    margin-bottom: 65px;
+}
+
+
+.faculty-stat-card {
+    background: white;
+
+    border: 1px solid #eef0f7;
+
+    border-radius: 18px;
+
+    padding: 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+
+    height: 100%;
+
+    box-shadow:
+        0 8px 25px rgba(31, 41, 55, 0.05);
+
+    transition: all 0.3s ease;
+}
+
+
+.faculty-stat-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 15px 35px rgba(31, 41, 55, 0.09);
+}
+
+
+.stat-icon {
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 15px;
+
+    font-size: 26px;
+}
+
+
+.stat-icon.blue {
+    background: #eef2ff;
+}
+
+
+.stat-icon.purple {
+    background: #f3e8ff;
+}
+
+
+.stat-icon.green {
+    background: #ecfdf5;
+}
+
+
+.faculty-stat-card span {
+    display: block;
+
+    color: #9ca3af;
+
+    font-size: 12px;
+
+    margin-bottom: 3px;
+}
+
+
+.faculty-stat-card strong {
+    display: block;
+
+    color: #111827;
+
+    font-size: 16px;
+}
+
+
+/* ==========================================================
+   SECTION TITLE
+========================================================== */
+
+.section-title {
+    margin-bottom: 30px;
+}
+
+
+.section-title > span {
+    color: #6366f1;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+
+.section-title h2 {
+    margin: 8px 0;
+
+    font-size: 30px;
+
+    font-weight: 700;
+}
+
+
+.section-title p {
+    color: #9ca3af;
+
+    margin: 0;
+}
+
+
+/* ==========================================================
+   ACTION CARDS
+========================================================== */
+
+.faculty-action-card {
+    position: relative;
+
+    background: white;
+
+    border-radius: 22px;
+
+    padding: 30px;
+
+    min-height: 260px;
+
+    display: flex;
+
+    gap: 22px;
+
+    border: 1px solid #eef0f7;
+
+    box-shadow:
+        0 10px 35px rgba(31, 41, 55, 0.06);
+
+    overflow: hidden;
+
+    transition: all 0.35s ease;
+}
+
+
+.faculty-action-card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 130px;
+    height: 130px;
+
+    border-radius: 50%;
+
+    right: -50px;
+    bottom: -50px;
+
+    opacity: 0.5;
+}
+
+
+.faculty-action-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 20px 45px rgba(31, 41, 55, 0.11);
+}
+
+
+.timetable-action::after {
+    background: #e0e7ff;
+}
+
+
+.add-action::after {
+    background: #f3e8ff;
+}
+
+
+.all-action::after {
+    background: #dbeafe;
+}
+
+
+.notification-action::after {
+    background: #dcfce7;
+}
+
+
+/* ==========================================================
+   ACTION ICON
+========================================================== */
+
+.action-icon {
+    flex-shrink: 0;
+
+    width: 62px;
+    height: 62px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 17px;
+
+    font-size: 30px;
+
+    background: #eef2ff;
+}
+
+
+.add-action .action-icon {
+    background: #f3e8ff;
+}
+
+
+.all-action .action-icon {
+    background: #eff6ff;
+}
+
+
+.notification-action .action-icon {
+    background: #ecfdf5;
+}
+
+
+/* ==========================================================
+   ACTION CONTENT
+========================================================== */
+
+.action-content {
+    position: relative;
+
+    z-index: 2;
+}
+
+
+.action-label {
+    display: inline-block;
+
+    color: #6366f1;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    margin-bottom: 7px;
+}
+
+
+.action-content h3 {
+    font-size: 23px;
+
+    font-weight: 700;
+
+    margin-bottom: 10px;
+
+    color: #111827;
+}
+
+
+.action-content p {
+    color: #6b7280;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    margin-bottom: 20px;
+
+    max-width: 450px;
+}
+
+
+/* ==========================================================
+   ACTION BUTTON
+========================================================== */
+
+.faculty-action-btn {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    text-decoration: none;
+
+    background: #4f46e5;
+
+    color: white;
+
+    padding: 10px 17px;
+
+    border-radius: 10px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    transition: all 0.3s ease;
+}
+
+
+.faculty-action-btn:hover {
+    color: white;
+
+    background: #4338ca;
+
+    transform: translateX(3px);
+}
+
+
+.add-btn {
+    background: #7c3aed;
+}
+
+
+.add-btn:hover {
+    background: #6d28d9;
+}
+
+
+.all-btn {
+    background: #2563eb;
+}
+
+
+.all-btn:hover {
+    background: #1d4ed8;
+}
+
+
+.notification-btn {
+    background: #059669;
+}
+
+
+.notification-btn:hover {
+    background: #047857;
+}
+
+
+.faculty-action-btn span {
+    font-size: 18px;
+
+    transition: transform 0.3s ease;
+}
+
+
+.faculty-action-btn:hover span {
+    transform: translateX(4px);
+}
+
+
+/* ==========================================================
+   INFORMATION PANEL
+========================================================== */
+
+.faculty-info-panel {
+    margin-top: 45px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    padding: 22px 25px;
+
+    background: white;
+
+    border: 1px solid #eef0f7;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 8px 25px rgba(31, 41, 55, 0.05);
+}
+
+
+.faculty-info-icon {
+    width: 52px;
+    height: 52px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #fff7ed;
+
+    border-radius: 14px;
+
+    font-size: 25px;
+}
+
+
+.faculty-info-panel h4 {
+    font-size: 16px;
+
+    font-weight: 600;
+
+    margin-bottom: 5px;
+}
+
+
+.faculty-info-panel p {
+    color: #6b7280;
+
+    font-size: 13px;
+
+    margin: 0;
+
+    line-height: 1.6;
+}
+
+
+/* ==========================================================
+   FOOTER
+========================================================== */
+
+.faculty-footer {
+    background: #111827;
+
+    color: white;
+
+    padding: 30px 0;
+}
+
+
+.faculty-footer p {
+    margin-bottom: 5px;
+
+    font-weight: 500;
+}
+
+
+.faculty-footer small {
+    color: #9ca3af;
+}
+
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+@media (max-width: 768px) {
+
+    .faculty-dashboard {
+        padding: 45px 0 60px;
+    }
+
+
+    .faculty-welcome {
+        align-items: flex-start;
+    }
+
+
+    .faculty-profile-icon {
+        width: 75px;
+        height: 75px;
+
+        border-radius: 20px;
+
+        font-size: 35px;
+    }
+
+
+    .faculty-welcome h1 {
+        font-size: 32px;
+    }
+
+
+    .faculty-welcome p {
+        font-size: 14px;
+    }
+
+
+    .faculty-action-card {
+        min-height: auto;
+
+        padding: 24px;
+    }
+
+}
+
+
+@media (max-width: 576px) {
+
+    .faculty-logo {
+        font-size: 16px;
+    }
+
+
+    .faculty-logo-icon {
+        width: 36px;
+        height: 36px;
+    }
+
+
+    .faculty-logout {
+        padding: 7px 13px;
+    }
+
+
+    .faculty-welcome {
+        display: block;
+    }
+
+
+    .faculty-profile-icon {
+        display: none;
+    }
+
+
+    .faculty-welcome h1 {
+        font-size: 28px;
+    }
+
+
+    .faculty-action-card {
+        display: block;
+    }
+
+
+    .action-icon {
+        margin-bottom: 18px;
+    }
+
+
+    .faculty-info-panel {
+        align-items: flex-start;
+    }
+
+}
+
+
+
+

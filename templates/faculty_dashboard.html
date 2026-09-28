@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Faculty Dashboard | Online Smart Schedule</title>
+
+    <!-- Bootstrap -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <!-- Google Font -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Main CSS -->
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+
+<body class="faculty-dashboard-body">
+
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<nav class="navbar faculty-navbar">
+
+    <div class="container">
+
+        <a
+            href="{{ url_for('home') }}"
+            class="faculty-logo">
+
+            <span class="faculty-logo-icon">
+                📅
+            </span>
+
+            <span>
+                Online Smart Schedule
+            </span>
+
+        </a>
+
+
+        <a
+            href="{{ url_for('logout') }}"
+            class="faculty-logout">
+
+            Logout
+
+        </a>
+
+    </div>
+
+</nav>
+
+
+
+<!-- =====================================================
+     DASHBOARD
+===================================================== -->
+
+<section class="faculty-dashboard">
+
+    <div class="container">
+
+
+        <!-- =================================================
+             WELCOME HEADER
+        ================================================== -->
+
+        <div class="faculty-welcome">
+
+            <div>
+
+                <span class="faculty-badge">
+                    👨‍🏫 FACULTY PORTAL
+                </span>
+
+
+                <h1>
+                    Welcome, {{ name }} 👋
+                </h1>
+
+
+                
+
+            </div>
+
+
+            <div class="faculty-profile-icon">
+
+                👨‍🏫
+
+            </div>
+
+        </div>
+
+
+
+        
+
+
+
+        <!-- =================================================
+             MAIN ACTION CARDS
+        ================================================== -->
+
+        <div class="section-title">
+
+            <span>
+                FACULTY TOOLS
+            </span>
+
+            <h2>
+                Manage Your Schedule
+            </h2>
+
+            <p>
+                Access the tools you need to manage your
+                lectures and timetable.
+            </p>
+
+        </div>
+
+
+
+        <div class="row g-4">
+
+
+            <!-- =================================================
+                 VIEW TIMETABLE
+            ================================================== -->
+
+            <div class="col-lg-6">
+
+                <div class="faculty-action-card timetable-action">
+
+                    <div class="action-icon">
+                        📅
+                    </div>
+
+
+                    <div class="action-content">
+
+                        <span class="action-label">
+                            SCHEDULE
+                        </span>
+
+                        <h3>
+                            View Timetable
+                        </h3>
+
+                        <p>
+                            View your assigned lectures,
+                            subjects, classrooms and
+                            teaching timings.
+                        </p>
+
+
+                        <a
+                            href="{{ url_for('faculty_timetable') }}"
+                            class="faculty-action-btn">
+
+                            View My Timetable
+
+                            <span>
+                                →
+                            </span>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 ADD TIMETABLE
+            ================================================== -->
+
+            <div class="col-lg-6">
+
+                <div class="faculty-action-card add-action">
+
+                    <div class="action-icon">
+                        ➕
+                    </div>
+
+
+                    <div class="action-content">
+
+                        <span class="action-label">
+                            MANAGEMENT
+                        </span>
+
+                        <h3>
+                            Add Timetable
+                        </h3>
+
+                        <p>
+                            Add a new lecture to your schedule
+                            with subject, classroom, day and
+                            time details.
+                        </p>
+
+
+                        <a
+                            href="{{ url_for('add_timetable') }}"
+                            class="faculty-action-btn add-btn">
+
+                            Add New Schedule
+
+                            <span>
+                                →
+                            </span>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 ALL TIMETABLES
+            ================================================== -->
+
+            <div class="col-lg-6">
+
+                <div class="faculty-action-card all-action">
+
+                    <div class="action-icon">
+                        📋
+                    </div>
+
+
+                    <div class="action-content">
+
+                        <span class="action-label">
+                            OVERVIEW
+                        </span>
+
+                        <h3>
+                            View All Timetables
+                        </h3>
+
+                        <p>
+                            View the complete college timetable
+                            and check scheduled lectures.
+                        </p>
+
+
+                        <a
+                            href="{{ url_for('faculty_all_timetables') }}"
+                            class="faculty-action-btn all-btn">
+
+                            View Timetables
+
+                            <span>
+                                →
+                            </span>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 NOTIFICATIONS
+            ================================================== -->
+
+            <div class="col-lg-6">
+
+                <div class="faculty-action-card notification-action">
+
+                    <div class="action-icon">
+                        🔔
+                    </div>
+
+
+                    <div class="action-content">
+
+                        <span class="action-label">
+                            UPDATES
+                        </span>
+
+                        <h3>
+                            Notifications
+                        </h3>
+
+                        <p>
+                            Stay informed about timetable
+                            changes and schedule updates.
+                        </p>
+
+
+                        <a
+                            href="{{ url_for('notifications') }}"
+                            class="faculty-action-btn notification-btn">
+
+                            View Notifications
+
+                            <span>
+                                →
+                            </span>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             INFORMATION PANEL
+        ================================================== -->
+
+        <div class="faculty-info-panel">
+
+            <div class="faculty-info-icon">
+                💡
+            </div>
+
+
+            <div>
+
+                <h4>
+                    Manage Your Own Schedule
+                </h4>
+
+                <p>
+                    You can manage your assigned timetable
+                    entries. Schedule changes are reflected
+                    in the student timetable and notifications.
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="faculty-footer">
+
+    <div class="container text-center">
+
+        <p>
+            © 2026 Online Smart Schedule
+        </p>
+
+        <small>
+            Smart College Timetable Management System
+        </small>
+
+    </div>
+
+</footer>
+
+
+</body>
+
+</html>
